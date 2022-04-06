@@ -9,24 +9,26 @@ const eqArrays = function(arr1, arr2) {
   }
   return true;
 };
+
 const assertArraysEqual = function(arr1, arr2) {
 
+  
   if (eqArrays(arr1, arr2) === true) {
     console.log(`Assertion Passed: ${arr1.join()} === ${arr2.join()}`);
   } else console.log(`Assertion Failed: ${arr1.join()} !== ${arr2.join()}`);
 
 };
 
-const without = function(arr, without) {
-  let arrOut = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (!without.find(element => element === arr[i])) {
-      arrOut.push(arr[i]);
-    }
+const flatten = function(arr){
+  outArr = [];
+  for(let element of arr){
+    if(Array.isArray(element)) {
+      for(let value of element){
+        outArr.push(value);
+      }
+    }else outArr.push(element);
   }
-  return arrOut;
+  return outArr;
 };
 
-//console.log(without([1, 2, 3], [1]));
-assertArraysEqual(without(["1", "2", "3","88"], [1, 2, "3", "4", 6, 4, 3]),["1","2"]);
-assertArraysEqual(without(["1", "2", "3"], ["3", 2, 1, "4", 6, 4, 3]),["1","2"]);
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]),[1, 2, 3, 4, 5, 6, 7]);
