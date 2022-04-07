@@ -23,7 +23,6 @@ const countLetters = function(string) {
       }
     }
   }
-
   return count;
 };
 
