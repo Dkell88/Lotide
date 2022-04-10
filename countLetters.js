@@ -1,24 +1,27 @@
 const assertEqual = function(actual, expected) {
 
+  //Determine if two primatives are equal. If they are log a pass. If not log a fail.
   if (actual === expected) {
-    console.log(`Assertion Passed: ${actual} === ${expected}`);
+    console.log(`💚💚💚  Assertion Passed: ${actual} === ${expected}   💚💚💚`);
     return;
   }
-  console.log(`Assertion Failed: ${actual} !== ${expected}`);
+  console.log(`💥💥💥   Assertion Failed: ${actual} !== ${expected}   💥💥💥`);
 };
 
 
-const countLetters = function(string) {
-  const count = {};
 
-  for(const letter of string){
-    //console.log(letter);
-    if(letter !== " "){
-      if(count[letter]){
-        //console.log("Incement the key = 1")
+const countLetters = function(string) {
+  const count = {}; //Variable to save the count of each letter. Save as key = letter, value = count.
+
+  //Iterate through each letter in the passed "string"
+  for (const letter of string) {
+    //Ignore spaces
+    if (letter !== " ") {
+      //If the letter(key) exists in the object already then increment the count (value) of that letter(key).
+      if (count[letter]) {
         count[letter] += 1;
-      }else {
-        //console.log("Initially add the key = 1")
+      //Else the letter (key) must not exist. Therefore add the letter(key) in the object and start the count (value) at 1
+      } else {
         count[letter] = 1;
       }
     }

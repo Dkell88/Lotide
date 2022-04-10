@@ -1,5 +1,6 @@
 const assertEqual = function(actual, expected) {
 
+  //Determine if two primatives are equal. If they are log a pass. If not log a fail.
   if (actual === expected) {
     console.log(`💚💚💚  Assertion Passed: ${actual} === ${expected}   💚💚💚`);
     return;
@@ -7,22 +8,18 @@ const assertEqual = function(actual, expected) {
   console.log(`💥💥💥   Assertion Failed: ${actual} !== ${expected}   💥💥💥`);
 };
 
-// Instruction
-// Implement the function findKey which takes in an object and a callback. 
-// It should scan the object and return the first key for which the callback returns a truthy value. 
-// If no key is found, then it should return undefined.
 
 const findKey = function(object, callback) {
-  let result = "";
-  for(let key in object){
-    //console.log(object[key]);
-    //console.log(callback(key))
-    if(callback(object[key])){
-      result = key;
-      return result
+  let result = ""; //Store the results in a string variable
+  //Iterate through each key in the object
+  for (let key in object) {
+    //Determine if the results of the callback function match the past key.
+    if (callback(object[key])) {
+      result = key; //results = the first key value found that matches the callback function.
+      return result;
     }
   }
-  return result
+  return result;
 };
 
 

@@ -1,36 +1,35 @@
 const assertEqual = function(actual, expected) {
 
+  //Determine if two primatives are equal. If they are log a pass. If not log a fail.
   if (actual === expected) {
-    console.log(`Assertion Passed: ${actual} === ${expected}`);
-    return ;
-  }
-  console.log(`Assertion Failed: ${actual} !== ${expected}`);
-};
-
-const findKeyByValue = function(objIn, valueIn) {
-  const values = Object.values(objIn);
-  //console.log(values);
-  //console.log(val);
-  //console.log(`${!values.includes(val)}`);
-  if(!values.includes(valueIn)){
-    //console.log(`${valueIn} Sucks!!`);
+    console.log(`💚💚💚  Assertion Passed: ${actual} === ${expected}   💚💚💚`);
     return;
   }
-  //console.log("\n----- We are entering the for loop -----")
-  for(const tempValue in objIn){
-    //console.log(`Key: ${tempValue} \tValue within that key ${objIn[tempValue]}`);
-    if (objIn[tempValue] === valueIn){
-      //console.log("Found you !!")
+  console.log(`💥💥💥   Assertion Failed: ${actual} !== ${expected}   💥💥💥`);
+};
+
+
+const findKeyByValue = function(objIn, valueIn) {
+
+  //If the object (objIn) doesn't include the value being looked for than return undefined.
+  if (!Object.values(objIn).includes(valueIn)) {
+    return;
+  }
+
+  //Iterate through each of the keys in the object
+  for (const tempValue in objIn) {
+    //If the value of the key being searched equals the valueIn being search for. Than return the key name.
+    if (objIn[tempValue] === valueIn) {
       return tempValue;
     }
   }
 };
 
-const bestTVShowsByGenre = { 
-  sci_fi: "The Expanse",
+const bestTVShowsByGenre = {
+  sciFi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama:  "The Wire"
 };
 
 assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), " ");//undefined);
