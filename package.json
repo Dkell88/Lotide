@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@dkell88/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "The lotide library",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/Dkell88/Lotide.git"
   },
-  "author": "",
+  "author": "Darren Kelly <DarrenKelly1188@gmail.com> (https://github.com/Dkell88)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Dkell88/Lotide/issues"
