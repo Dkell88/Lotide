@@ -1,5 +1,9 @@
 const middle = function(array) {
   let middleArr = []; //create varibale to store results
+  if (array.length === 0) {
+    return middleArr;
+  }
+
   const midIndex = Math.floor(array.length / 2); // determine the middle of the array
   //If the array is even then push in the second middle value
   if (array.length % 2 === 0) {

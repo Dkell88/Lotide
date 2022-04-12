@@ -8,4 +8,7 @@ describe("#tail", () => {
   it("returns ['6','10','35'] for ['5','6','10','35']", () => {
     assert.deepEqual(tail(['5','6','10','35']), ['6','10','35']);
   });
+  it("returns [] for ['5']", () => {
+    assert.deepEqual(tail(['5']), []);
+  });
 });

@@ -1,28 +1,4 @@
-const assertEqual = function(actual, expected) {
-
-  //Determine if two primatives are equal. If they are log a pass. If not log a fail.
-  if (actual === expected) {
-    console.log(`💚💚💚  Assertion Passed: ${actual} === ${expected}   💚💚💚`);
-    return;
-  }
-  console.log(`💥💥💥   Assertion Failed: ${actual} !== ${expected}   💥💥💥`);
-};
-
-const eqArrays = function(arr1, arr2) {
-
-  //Ensure the two arrays are the same length. If not return false
-  if (arr1.length !== arr2.length) return false;
-
-  //Iterate through each element of the array. Return false if any of the elements don't match
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  //If both tests pass return true
-  return true;
-};
-
+const eqArrays   = require('./eqArrays');
 const eqObjects = function(object1, object2) {
   
   //Store the key values from each object just to clean up some of the loops.
@@ -49,15 +25,4 @@ const eqObjects = function(object1, object2) {
   }
   return true;
 };
-
-/*const ab = { a: "1", b: "2", c: "3" };
-const ba = { b: "2", a: "1" , c: "3"};
-const abcd = { b: "2", a: "1" , c: "3", d: "4"};
-assertEqual(eqObjects(ab, ba), true);
-assertEqual(eqObjects(ab, abcd), false); */
-
-const cd = {c: "1", d: ["2", 3]};
-const dc = {d: ["2", 3], c: "1"};
-const cd2 = {c: "1", d: ["2", 3, 4]};
-assertEqual(eqObjects(cd, dc), true);
-assertEqual(eqObjects(cd, cd2), false);
+module.exports = eqObjects;

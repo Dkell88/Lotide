@@ -8,5 +8,11 @@ describe("#middle", () => {
   it("returns ['6','10'] for ['5','6','10','35']", () => {
     assert.deepEqual(middle(['5','6','10','35']), ['6','10']);
   });
+  it("returns ['6'] for ['6']", () => {
+    assert.deepEqual(middle(['6']), ['6']);
+  });
+  it("returns [] for []", () => {
+    assert.deepEqual(middle([]), []);
+  });
 });
 
